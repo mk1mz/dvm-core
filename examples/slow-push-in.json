@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "description": "A 4 s smooth push-in from the full 1920x1080 frame to a centered 1080x1080 square, using an explicit transition_duration equal to the event duration.",
+  "canvas": { "width": 1920, "height": 1080 },
+  "events": [
+    { "start": 0, "duration": 2, "viewport": { "x": 0, "y": 0, "width": 1920, "height": 1080 } },
+    { "start": 2, "duration": 4, "viewport": { "x": 420, "y": 0, "width": 1080, "height": 1080 }, "transition": "smooth", "transition_duration": 4 }
+  ]
+}

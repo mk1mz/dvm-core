@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "description": "Your 12 s scenario on a 1920x1920 square canvas: 9:16 -> 1:1 -> 16:9 -> 9:16. Every viewport is at native resolution (no upscaling). Smooth transitions take 0.5 s.",
+  "canvas": { "width": 1920, "height": 1920 },
+  "events": [
+    { "start": 0, "duration": 3, "viewport": { "x": 420, "y": 0, "width": 1080, "height": 1920 }, "transition": "cut" },
+    { "start": 3, "duration": 3, "viewport": { "x": 0, "y": 0, "width": 1920, "height": 1920 }, "transition": "smooth" },
+    { "start": 6, "duration": 3, "viewport": { "x": 0, "y": 420, "width": 1920, "height": 1080 }, "transition": "smooth" },
+    { "start": 9, "duration": 3, "viewport": { "x": 420, "y": 0, "width": 1080, "height": 1920 }, "transition": "smooth" }
+  ]
+}

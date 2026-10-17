@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "description": "Hard cuts only on a 3840x2160 canvas: 16:9 -> 4:3 -> ~2.39:1 -> 16:9. Mimics era/format changes. No interpolation.",
+  "canvas": { "width": 3840, "height": 2160 },
+  "events": [
+    { "start": 0, "duration": 2, "viewport": { "x": 0, "y": 0, "width": 3840, "height": 2160 } },
+    { "start": 2, "duration": 2, "viewport": { "x": 480, "y": 0, "width": 2880, "height": 2160 }, "transition": "cut" },
+    { "start": 4, "duration": 2, "viewport": { "x": 0, "y": 276, "width": 3840, "height": 1608 }, "transition": "cut" },
+    { "start": 6, "duration": 2, "viewport": { "x": 0, "y": 0, "width": 3840, "height": 2160 }, "transition": "cut" }
+  ]
+}
