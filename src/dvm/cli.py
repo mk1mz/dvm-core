@@ -58,7 +58,15 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--port", type=int, default=8000, help="local port (default: 8000)")
     p.add_argument("--no-browser", action="store_true", help="do not open browser automatically")
 
+    conf = sub.add_parser("conformance", help="run official DVM conformance test suite")
+
     args = ap.parse_args(argv)
+
+    if args.cmd == "conformance":
+        from .conformance import run_conformance_suite
+        report = run_conformance_suite()
+        print(report.format_summary())
+        return 0 if report.all_passed else 1
 
     if args.cmd == "player":
         import functools
