@@ -14,11 +14,7 @@ from .mask import (
     MalformedPayload,
     RasterRectangleValue,
     Sample,
-    scale_value,
-)
-from .present import (
-    contain,
-    cover,
+    scale_to_buffer,
 )
 from .timeline import (
     Rect,
@@ -300,8 +296,8 @@ def run_conformance_suite(
                     top=actual_rect.y,
                     height=actual_rect.height,
                 )
-                scaled_val = scale_value(val, case.buf_raster[0], case.buf_raster[1])
-                actual_scaled = (scaled_val.left, scaled_val.top, scaled_val.width, scaled_val.height)
+                scaled_rect = scale_to_buffer(val, case.buf_raster[0], case.buf_raster[1])
+                actual_scaled = (scaled_rect.x, scaled_rect.y, scaled_rect.width, scaled_rect.height)
                 if actual_scaled != case.expected_scaled_rect:
                     failures.append(
                         f"PTS {float(pts_frac)}s [scale to {case.buf_raster}]: "
